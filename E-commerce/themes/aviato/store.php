@@ -23,7 +23,7 @@ session_start();
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Shop | Bloom and Grow</title>
+  <title>Seller Store | Bloom and Grow</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -67,7 +67,7 @@ session_start();
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Site Logo -->
 				<div class="logo text-center">
-					<a href="index.html">
+					<a href="index-store.php">
 						<!-- replace logo here -->
 						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -87,8 +87,8 @@ session_start();
 				<!-- Cart -->
 				<ul class="top-menu text-right list-inline">
 					<li class="dropdown cart-nav dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
-								class="tf-ion-android-cart"></i>Cart</a>
+						<!-- <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+								class="tf-ion-android-cart"></i>Cart</a> -->
 						<div class="dropdown-menu cart-dropdown">
 							<!-- Cart Item -->
 							<div class="media">
@@ -183,20 +183,20 @@ session_start();
 
 					<!-- Home -->
 					<li class="dropdown ">
-						<a href="index-customer.php">Home</a>
+						<a href="index-store.php">Home</a>
 					</li><!-- / Home -->
 
 
 					<!-- Elements -->
-					<li class="dropdown dropdown-slide">
+					<!-- <li class="dropdown dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Shop <span
 								class="tf-ion-ios-arrow-down"></span></a>
 						<div class="dropdown-menu">
-							<div class="row">
+							<div class="row"> -->
 
 								<!-- Basic -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
+								<!-- <div class="col-lg-6 col-md-6 mb-sm-3">
 									<ul>
 										<li class="dropdown-header">Pages</li>
 										<li role="separator" class="divider"></li>
@@ -207,10 +207,10 @@ session_start();
 										<li><a href="confirmation.html">Confirmation</a></li>
 
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Layout -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
+								<!-- <div class="col-lg-6 col-md-6 mb-sm-3">
 									<ul>
 										<li class="dropdown-header">Layout</li>
 										<li role="separator" class="divider"></li>
@@ -218,7 +218,7 @@ session_start();
 										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
 
 									</ul>
-								</div>
+								</div> -->
 
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
@@ -226,15 +226,15 @@ session_start();
 
 
 					<!-- Pages -->
-					<li class="dropdown full-width dropdown-slide">
+					<!-- <li class="dropdown full-width dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Pages <span
 								class="tf-ion-ios-arrow-down"></span></a>
 						<div class="dropdown-menu">
-							<div class="row">
+							<div class="row"> -->
 
 								<!-- Introduction -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<ul>
 										<li class="dropdown-header">Introduction</li>
 										<li role="separator" class="divider"></li>
@@ -244,10 +244,10 @@ session_start();
 										<li><a href="coming-soon.html">Coming Soon</a></li>
 										<li><a href="faq.html">FAQ</a></li>
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Contact -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<ul>
 										<li class="dropdown-header">Dashboard</li>
 										<li role="separator" class="divider"></li>
@@ -256,10 +256,10 @@ session_start();
 										<li><a href="address.html">Address</a></li>
 										<li><a href="profile-details.html">Profile Details</a></li>
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Utility -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<ul>
 										<li class="dropdown-header">Utility</li>
 										<li role="separator" class="divider"></li>
@@ -267,14 +267,14 @@ session_start();
 										<li><a href="signin.html">Signin Page</a></li>
 										<li><a href="forget-password.html">Forget Password</a></li>
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Mega Menu -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<a href="shop.html">
 										<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
 									</a>
-								</div>
+								</div> -->
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
 					</li><!-- / Pages -->
@@ -282,7 +282,7 @@ session_start();
 
 
 					<!-- Blog -->
-					<li class="dropdown dropdown-slide">
+					<!-- <li class="dropdown dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Blog <span
 								class="tf-ion-ios-arrow-down"></span></a>
@@ -293,10 +293,10 @@ session_start();
 							<li><a href="blog-grid.html">Blog 2 Columns</a></li>
 							<li><a href="blog-single.html">Blog Single</a></li>
 						</ul>
-					</li><!-- / Blog -->
+					</li>/ Blog -->
 
 					<!-- Shop -->
-					<li class="dropdown dropdown-slide">
+					<!-- <li class="dropdown dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Elements <span
 								class="tf-ion-ios-arrow-down"></span></a>
@@ -304,7 +304,7 @@ session_start();
 							<li><a href="typography.html">Typography</a></li>
 							<li><a href="buttons.html">Buttons</a></li>
 							<li><a href="alerts.html">Alerts</a></li>
-						</ul>
+						</ul> -->
 					</li><!-- / Blog -->
 				</ul><!-- / .nav .navbar-nav -->
 
@@ -319,9 +319,9 @@ session_start();
 		<div class="row">
 			<div class="col-md-12">
 				<div class="content">
-					<h1 class="page-name">Shop</h1>
+					<h1 class="page-name">Your Store</h1>
 					<ol class="breadcrumb">
-						<li><a href="index-customer.php">Home</a></li>
+						<li><a href="index-store.php">Home</a></li>
 						<li class="active">shop</li>
 					</ol>
 				</div>
@@ -334,7 +334,8 @@ session_start();
 <section class="products section">
 	<div class="container">
 		<div class="row">
-			
+		<div class="row">
+
 		<?php		
 				include "connection.php";
 				$query = "SELECT * FROM `plants_for_sale`";
@@ -343,14 +344,14 @@ session_start();
 				$result = $stmt->get_result();
 				while($row = $result->fetch_assoc()) {
 			?>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src='<?php echo $row['image'];?>' alt="plant">
+						<img class="img-responsive" id="img" src='<?php echo $row['image'];?>' alt="plant">
 						<div class="preview-meta">
 							<ul>
 								<li>
-									<a href="cart.html"><i class="tf-ion-android-cart"></i></a>
+									<!-- <a href="cart.html"><i class="tf-ion-android-cart"></i></a> -->
 								</li>
 							</ul>
                       	</div>
@@ -358,6 +359,8 @@ session_start();
 					<div class="product-content">
 						<h4><a><?php echo $row["name"] ?></a></h4>
 						<p class="price">$00.00</p>
+						<p class="qty">In stock <?php echo $row["quantity"] ?></p>
+
 					</div>
 				</div>
 			</div>

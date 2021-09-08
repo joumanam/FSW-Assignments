@@ -772,7 +772,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   padding-right: 15px;
 }
 
-.cart-dropdown img {
+.cart-dropdown {
   width: 60px;
 }
 
@@ -941,6 +941,11 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   left: 0;
   right: 0;
   position: absolute;
+}
+
+#img {
+  height: 280px;
+  width: 300px;
 }
 
 .slider-item h1 {

@@ -153,15 +153,14 @@ session_start();
 					</li><!-- / Home -->
 
 					<!-- Elements -->
-					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
-							role="button" aria-haspopup="true" aria-expanded="false">Shop 
-							<span class="tf-ion-ios-arrow-down"></span></a>
+					<li>
+						<a href="shop.php"  data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Shop 
+							
 						<div class="dropdown-menu">
 							<div class="row">
 
 								<!-- Basic -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
+								<!-- <div class="col-lg-6 col-md-6 mb-sm-3">
 									<ul>
 										<li class="dropdown-header">Pages</li>
 										<li role="separator" class="divider"></li>
@@ -172,10 +171,10 @@ session_start();
 										<li><a href="confirmation.html">Confirmation</a></li>
 
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Layout -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
+								<!-- <div class="col-lg-6 col-md-6 mb-sm-3">
 									<ul>
 										<li class="dropdown-header">Layout</li>
 										<li role="separator" class="divider"></li>
@@ -183,7 +182,7 @@ session_start();
 										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
 
 									</ul>
-								</div>
+								</div> -->
 
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
@@ -285,7 +284,7 @@ session_start();
       <div class="row">
         <div class="col-lg-8 text-center">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
+          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" >It's never too late<br>to be a crazy plant lady!</h1>
           <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.php">Shop Now</a>
         </div>
       </div>
@@ -296,7 +295,7 @@ session_start();
       <div class="row">
         <div class="col-lg-8 text-left">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
+		  <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" >Home is where<br>your plants are</h1>
           <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.php">Shop Now</a>
         </div>
       </div>
@@ -307,7 +306,7 @@ session_start();
       <div class="row">
         <div class="col-lg-8 text-right">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
+		  <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" >Pets are the new kids, <br>Plants are the new pets</h1>
           <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.php">Shop Now</a>
         </div>
       </div>
@@ -366,42 +365,54 @@ session_start();
 			</div>
 		</div>
 		<div class="row">
-			<?php		
-				include "connection.php";
-				$query = "SELECT * FROM `plants_for_sale`";
-				$stmt = $connection->prepare($query);
-				$stmt->execute();
-				$result = $stmt->get_result();
-				while($row = $result->fetch_assoc()){
-			?> 
-			<div class="col-md-4">
+		<div class="row">
+		
+		<?php
+			include "connection.php";
+			$query = "SELECT * FROM `plants_for_sale`";
+			$stmt = $connection->prepare($query);
+			$stmt->execute();
+			$result = $stmt->get_result();
+			while($row = $result->fetch_assoc()) {
+			?>
+		<div class="col-md-3">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src='<?php echo $row['image'];?>' alt="plant">
+						<img class="img-responsive" id="img" src="<?php echo $row["image"];?>" alt="plant">
 						<div class="preview-meta">
 							<ul>
+								<!-- <li>
+									<span  data-toggle="modal" data-target="#product-modal">
+										<i class="tf-ion-ios-search-strong"></i>
+									</span>
+								</li> -->
 								<li>
-									<a href="cart.html"><i class="tf-ion-android-cart"></i></a>
+			                        <a href="#!" ><i class="tf-ion-ios-heart"></i></a>
+								</li>
+								<li>
+									<a href="#!"><i class="tf-ion-android-cart"></i></a>
 								</li>
 							</ul>
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a><?php echo $row["name"] ?></a></h4>
-						<p class="price">$00.00</p>
-						<p class="qty">In stock <?php echo $row["quantity"] ?></p>
+					<h4><a><?php echo $row["name"] ?></a></h4>
+					<p class="price">$00.00</p>
+					<p class="qty"> <?php echo $row["quantity"] ?> In stock</p>						
 					</div>
 				</div>
 			</div>
 			<?php
 				}
 			?>
-		</div>
 		<!-- Modal -->
+		
 		<div class="modal product-modal fade" id="product-modal">
+		
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<i class="tf-ion-close"></i>
 			</button>
+			
 		  	<div class="modal-dialog " role="document">
 		    	<div class="modal-content">
 			      	<div class="modal-body">
@@ -411,9 +422,11 @@ session_start();
 				        			<img class="img-responsive" src="images/shop/products/modal-product.jpg" alt="product-img" />
 			        			</div>
 			        		</div>
+							
 			        		<div class="col-md-4 col-sm-6 col-xs-12">
 			        			<div class="product-short-details">
-			        				<h2 class="product-title">GM Pendant, Basalt Grey</h2>
+								
+			        				<!-- <h2 class="product-title"><?php echo $row["name"] ?></h2> -->
 			        				<p class="product-price">$200</p>
 			        				<p class="product-short-description">
 			        					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil cum. Illo laborum numquam rem aut officia dicta cumque.
@@ -427,7 +440,7 @@ session_start();
 		    	</div>
 		  	</div>
 		</div><!-- /.modal -->
-
+	
 		</div>
 	</div>
 </section>

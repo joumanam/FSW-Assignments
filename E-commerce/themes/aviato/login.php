@@ -17,15 +17,15 @@ if (isset($_POST["password"]) && $_POST["password"] !="") {
 	$result = $stmt->get_result();
 	$row = $result->fetch_assoc();
 
-	$_SESSION["id"] = $row["id"];
+	// session_unset();
 
-	
+
 	if($row > 0 && $row['user_type'] == "customer") {
 		header('location: ../aviato/index-customer.php');
 	}
 	elseif($row > 0 && $row['user_type'] == "store") {
+		// $_SESSION["id"] = $row["id"];
 		header('location: ../aviato/index-store.php');
-		
 	}
 	else{
 		$_SESSION["login-flash"] = "You have entered a wrong username/password";

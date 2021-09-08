@@ -65,6 +65,7 @@ session_start();
 
 
 <body id="body">
+  
 
 <section class="signin-page account">
   <div class="container">
@@ -96,7 +97,7 @@ session_start();
               
             <div>
               <label for="img"> Provide a clear image of the product: </label>
-              <input type="file" id="img" name="image" accept="image/*" required>
+              <input type="file" name="image" accept="image/*" required>
               <br/>
             </div>
               <label for="quantity"> Quantity of product you wish to add: 

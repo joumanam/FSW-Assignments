@@ -1,6 +1,7 @@
 <?php
 
 include "connection.php";
+session_start();
 
 if(isset($_POST["first_name"]) && $_POST["first_name"] != "") {
     $first_name = $_POST["first_name"];

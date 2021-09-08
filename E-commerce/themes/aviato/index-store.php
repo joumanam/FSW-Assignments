@@ -16,6 +16,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 session_start();
 
+
 ?>
 
 <!DOCTYPE html>
@@ -260,7 +261,7 @@ session_start();
       <div class="row">
         <div class="col-lg-8 text-center">
 			<p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1" class="text-uppercase">Showcase your plants!</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
+          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">It's never too late<br>to be a crazy plant lady!</h1>
           <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="addItems2.php">Sell Your Products Now</a>
         </div>
       </div>
@@ -271,7 +272,7 @@ session_start();
       <div class="row">
         <div class="col-lg-8 text-left">
 			<p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1" class="text-uppercase">Showcase your plants!</p>
-			<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
+			<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Home is where<br>your plants are</h1>
           <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="addItems2.php">Sell Your Products Now</a>
         </div>
       </div>
@@ -282,7 +283,7 @@ session_start();
       <div class="row">
         <div class="col-lg-8 text-right">
 			<p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1" class="text-uppercase">Showcase your plants!</p>
-			<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
+			<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Pets are the new kids, <br>Plants are the new pets</h1>
           <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="addItems2.php">Sell Your Products Now</a>
         </div>
       </div>
@@ -340,46 +341,47 @@ session_start();
 			</div>
 		</div>
 		<div class="row">
-			<?php		
-				include "connection.php";
-				$query = "SELECT * FROM `plants_for_sale`";
-				$stmt = $connection->prepare($query);
-				$stmt->execute();
-				$result = $stmt->get_result();
-				while($row = $result->fetch_assoc()) {
+		<div class="row">
+
+		<?php
+			include "connection.php";
+			$query = "SELECT * FROM `plants_for_sale`";
+			$stmt = $connection->prepare($query);
+			$stmt->execute();
+			$result = $stmt->get_result();
+			while($row = $result->fetch_assoc()) {
 			?>
-			<div class="col-md-4">
+		<div class="col-md-3">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src='<?php echo $row['image'];?>' alt="plant">
+						<img class="img-responsive" id="img" src="<?php echo $row["image"];?>" alt="plant">
 						<div class="preview-meta">
-							<ul>
+							<!-- <ul>
 								<li>
-									<!-- <span  data-toggle="modal" data-target="#product-modal">
+									<span  data-toggle="modal" data-target="#product-modal">
 										<i class="tf-ion-ios-search-strong"></i>
-									</span> -->
+									</span>
 								</li>
 								<li>
-			                        <!-- <a href="#" ><i class="tf-ion-ios-heart"></i></a> -->
+			                        <a href="#!" ><i class="tf-ion-ios-heart"></i></a>
 								</li>
 								<li>
-									<!-- <a href="#!"><i class="tf-ion-android-cart"></i></a> -->
+									<a href="#!"><i class="tf-ion-android-cart"></i></a>
 								</li>
-							</ul>
+							</ul> -->
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a><?php echo $row["name"] ?></a></h4>
-						<p class="price">$00.00</p>
-						<p class="qty"> <?php echo $row["quantity"] ?> In stock</p>
+					<h4><a><?php echo $row["name"] ?></a></h4>
+					<p class="price">$00.00</p>
+					<p class="qty"> <?php echo $row["quantity"] ?> In stock</p>						
 					</div>
 				</div>
 			</div>
 			<?php
 				}
 			?>
-		</div>	
-
+		</div>
 		<!-- Modal -->
 		<div class="modal product-modal fade" id="product-modal">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
