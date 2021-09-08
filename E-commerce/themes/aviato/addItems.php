@@ -22,6 +22,13 @@ if(isset($_POST['submit'])) {
         die ("Enter a description for a better customer experience.");
     }
 
+    if(isset($_POST["product-quantity"]) && $_POST["product-quantity"] != 0) {
+        $qty = $_POST["product-quantity"];
+    }
+    // else{
+	// 	die ("Quantity should be 1 or above!");
+    // }
+
     $filename = $_FILES["image"]["name"];
     $tempname = $_FILES["image"]["tmp_name"];    
     $folder = "image/".$filename;
@@ -29,20 +36,39 @@ if(isset($_POST['submit'])) {
 
     move_uploaded_file($_FILES["image"]["tmp_name"], $folder);
     
+    $seller_id = $_SESSION["id"];    
+    // print_r($_POST);
+    // print($seller_id);
 
-    
-    $insert="INSERT INTO `plants_for_sale` (`name`, `category`, `description`, `image`) VALUES (?, ?, ?, ?);";
+    $insert="INSERT INTO `plants_for_sale` (`name`, `category`, `description`, `image`, `quantity`) VALUES (?, ?, ?, ?, ?);";
 
         $stmt1 = $connection->prepare($insert);
-        $stmt1->bind_param("ssss",$name,$category,$description,$folder);
+        $stmt1->bind_param("ssssi",$name,$category,$description,$folder, $qty);
         $stmt1->execute();
         $result = $stmt1->get_result();
-        // $stmt1->close();
-        // $connection->close();
+        $stmt1->close();
+    
 
+    if ($qty == 0) {
+        header("Location: additems2.php");
+        $_SESSION["quantity-error"] = "Quantity should be 1 or above!";}
+    else{
         header("Location: index-store.php");
+    }
+
+    $sql2="Select * from plants_for_sale where plants_for_sale.user_id=?;";
+
+    $stmt2= $connection->prepare($sql2); #specifc seller products
+    $stmt2->bind_param("s", $seller_id);
+    $stmt2->execute();
+    $result2 = $stmt2->get_result();
 
 
-}
+    $product1 = array(); 
+    while ($record1 = $result2->fetch_assoc()){ 
+        $product1[] = $record1;
+    }
+    
+    }
 
 ?>

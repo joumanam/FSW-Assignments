@@ -67,7 +67,7 @@ session_start();
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Site Logo -->
 				<div class="logo text-center">
-					<a href="index.html">
+					<a href="index-customer.php">
 						<!-- replace logo here -->
 						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -149,7 +149,7 @@ session_start();
 
 					<!-- Home -->
 					<li class="dropdown ">
-						<a href="index.html">Home</a>
+						<a href="index-customer.php">Home</a>
 					</li><!-- / Home -->
 
 					<!-- Elements -->
@@ -165,7 +165,7 @@ session_start();
 									<ul>
 										<li class="dropdown-header">Pages</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="shop.html">Shop</a></li>
+										<li><a href="shop.php">Shop</a></li>
 										<li><a href="checkout.html">Checkout</a></li>
 										<li><a href="cart.html">Cart</a></li>
 										<li><a href="pricing.html">Pricing</a></li>
@@ -236,7 +236,7 @@ session_start();
 
 								<!-- Mega Menu -->
 								<div class="col-sm-3 col-xs-12">
-									<a href="shop.html">
+									<a href="shop.php">
 										<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
 									</a>
 								</div>
@@ -286,7 +286,7 @@ session_start();
         <div class="col-lg-8 text-center">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
           <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.php">Shop Now</a>
         </div>
       </div>
     </div>
@@ -297,7 +297,7 @@ session_start();
         <div class="col-lg-8 text-left">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
           <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.php">Shop Now</a>
         </div>
       </div>
     </div>
@@ -308,7 +308,7 @@ session_start();
         <div class="col-lg-8 text-right">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
           <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.php">Shop Now</a>
         </div>
       </div>
     </div>
@@ -372,20 +372,14 @@ session_start();
 				$stmt = $connection->prepare($query);
 				$stmt->execute();
 				$result = $stmt->get_result();
-				while($row = $result->fetch_assoc()) {
-			?>
+				while($row = $result->fetch_assoc()){
+			?> 
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
 						<img class="img-responsive" src='<?php echo $row['image'];?>' alt="plant">
 						<div class="preview-meta">
 							<ul>
-								<li>
-									<!-- <span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span> -->
-								</li>
-								
 								<li>
 									<a href="cart.html"><i class="tf-ion-android-cart"></i></a>
 								</li>
@@ -394,7 +388,8 @@ session_start();
 					</div>
 					<div class="product-content">
 						<h4><a><?php echo $row["name"] ?></a></h4>
-						<p class="price"></p>
+						<p class="price">$00.00</p>
+						<p class="qty">In stock <?php echo $row["quantity"] ?></p>
 					</div>
 				</div>
 			</div>
@@ -447,7 +442,7 @@ Start Call To Action
 			<div class="col-md-12 text-center">
 				<div class="title">
 					<h2>SUBSCRIBE TO NEWSLETTER</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, <br> facilis numquam impedit ut sequi. Minus facilis vitae excepturi sit laboriosam.</p>
+					<p>Stay informed on the newest additions and updates about all kinds of plants.<br> You can unsubscribe anytime you want.</p>
 				</div>
 				<div class="col-lg-6 col-md-offset-3">
 				    <div class="input-group subscription-form">
@@ -495,7 +490,7 @@ Start Call To Action
 						<a href="contact.html">CONTACT</a>
 					</li>
 					<li>
-						<a href="shop.html">SHOP</a>
+						<a href="shop.php">SHOP</a>
 					</li>
 					<li>
 						<a href="pricing.html">Pricing</a>

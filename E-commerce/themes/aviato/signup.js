@@ -8,14 +8,6 @@ var confirmPasswordElement = document.getElementById("confirm_password");
 var submitElement = document.getElementById("submitButton");
 var formElement = document.getElementById("signUpForm");
 
-
-var emailValid;
-var confirmPass;
-var fnameValid;
-var lnameValid;
-// Listeners
-
-
 submitElement.addEventListener("click", function () {
   if (validateEmail() && confirmPassword() && validatefname() && validatelname()) {
     formElement.submit();
@@ -24,7 +16,7 @@ submitElement.addEventListener("click", function () {
     if(!confirmPassword()){
       var element = document.getElementById("confirm_password");
       element.classList.add("alert-danger");
-      element.classList.add("alert");
+      element.classList.add("alert"); 
     }else{
       var element = document.getElementById("confirm_password");
       element.classList.remove("alert-danger");

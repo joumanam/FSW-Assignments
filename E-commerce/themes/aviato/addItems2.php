@@ -2,17 +2,23 @@
 THEME: Aviato | E-commerce template
 VERSION: 1.0.0
 AUTHOR: Themefisher
+
 HOMEPAGE: https://themefisher.com/products/aviato-e-commerce-template/
 DEMO: https://demo.themefisher.com/aviato/
 GITHUB: https://github.com/themefisher/Aviato-E-Commerce-Template/
+
 WEBSITE: https://themefisher.com
 TWITTER: https://twitter.com/themefisher
 FACEBOOK: https://www.facebook.com/themefisher
 -->
 
 <?php
+
 session_start();
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +27,7 @@ session_start();
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Login | Bloom and Grow</title>
+  <title>Store | Sell Your Items</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -48,40 +54,76 @@ session_start();
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
+ <!-- JS File for validation -->
+  <!-- <script src="jquery-3.5.1.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  <script src="signup.js"></script>
+
+
 </head>
+
 
 <body id="body">
 
 <section class="signin-page account">
   <div class="container">
     <div class="row">
-      
+    <?php
+        if($_SESSION){ ?>
+          <div class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>
+            <?php
+
+            echo($_SESSION["quantity-error"]);
+            session_destroy();
+          }?> 
+          </span></div>
+
       <div class="col-md-6 col-md-offset-3">
         <div class="block text-center">
             <h2>Bloom and Grow</h2>
           </a>
-          <h2 class="text-center">Welcome Back</h2>
-          <form class="text-left clearfix" action="login.php" method="POST">
+          <h2 class="text-center">What Plants Would You Like To Sell?</h2>
+          <form class="text-left clearfix" enctype="multipart/form-data" id="addItems" action="addItems.php" method = "POST">
             <div class="form-group">
-              <input type="email" class="form-control" name="email" required placeholder="Email">
+              <input type="text" class="form-control" id="plant-name" name="plant-name" placeholder="Name of the Plant" required>
+              <h6 id="error-fname"></h6>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" name="password" required placeholder="Password">
+              <textarea class="form-control" rows="3" cols="40" textarea id="description" name="pd-description" placeholder="Tell us a bit about your plant" required></textarea> 
+              <h6 id="error-lname"></h6>
+            </div>            
+              
+            <div>
+              <label for="img"> Provide a clear image of the product: </label>
+              <input type="file" id="img" name="image" accept="image/*" required>
+              <br/>
+            </div>
+              <label for="quantity"> Quantity of product you wish to add: 
+                <span style ="color:red; font-weight:400; font-size:0.35cm; font-style:italic;"> &nbsp; should be 1 or above</span></label>
+                <div class="single-product-details">
+                <div class="product-quantity">
+						<div class="product-quantity-slider">
+							<input id="product-quantity" type="text" value="1" name="product-quantity">
+            </div>
+           
+						</div>
+            </div>
+            <br/>
+            <div>
+              <label for="category"> Please choose the product category: </label>
+              <div class="form-group">
+                <label for="indoor"><input id="indoor" type="radio" name="prod-category" value="indoor" required> Indoor Plant</label><br/>
+                <label for="outdoor"><input id="outdoor" type="radio" name="prod-category" value="outdoor" required> Outdoor Plant</label><br>
+                <label for="gift"><input id="gift" type="radio" name="prod-category" value="gift" required> Gift Set</label><br/>
+              </div>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-main text-center">Login</button>
+              <a href="index-store.php"><button type="submit" id="submitButton" name="submit" class="btn btn-main text-center">Add to Store</button></a>
             </div>
           </form>
-          <p class="mt-20 text-center">New in this site ?<a href="signup.html"> Create New Account</a></p>
-          <?php
-        if($_SESSION){ ?>
-          <div class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>
-            <?php
-          echo($_SESSION["login-flash"]);
-          session_destroy();
-          }?> 
-          </span></div>
-        </div> <!--- hone serna barrat l box --->
+          <p class="mt-20"><a href="index-store.php">Go Back To Homepage</a></p>
+        </div>
       </div>
     </div>
   </div>

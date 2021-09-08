@@ -12,7 +12,11 @@ TWITTER: https://twitter.com/themefisher
 FACEBOOK: https://www.facebook.com/themefisher
 -->
 
+<?php 
 
+session_start();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +70,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Site Logo -->
 				<div class="logo text-center">
-					<a href="index.html">
+					<a href="index-store.php">
 						<!-- replace logo here -->
 						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -148,12 +152,15 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 					<!-- Home -->
 					<li class="dropdown ">
-						<a href="index-store.html">Home</a>
+						<a href="index-store.php">Home</a>
 					</li><!-- / Home -->
 
 					<!-- Elements -->
 					<li class="dropdown dropdown-slide">
-						<a href="addItems.html" role="button" aria-haspopup="true" aria-expanded="false">Add Items To Your Store</a>
+						<a href="addItems2.php" role="button" aria-haspopup="true" aria-expanded="false">Add Items To Your Store</a>
+
+					<li class="dropdown dropdown-slide">
+						<a href="store.php" role="button" aria-haspopup="true" aria-expanded="false">Go To Your Store</a>	
 						<!-- <div class="dropdown-menu"> -->
 							<div class="row">
 
@@ -162,11 +169,11 @@ FACEBOOK: https://www.facebook.com/themefisher
 					<li>
 						<!-- <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false"><span
-								class="tf-ion-ios-arrow-down"></span></a> -->
+								class="tf-ion-ios-arrow-down"></span></a>
 						<div class="dropdown-menu">
-							<div class="row">
+							<div class="row"> -->
 
-								<!-- Introduction -->
+								<!-- Introduction
 								<div class="col-sm-3 col-xs-12">
 									<ul>
 										<li class="dropdown-header">Introduction</li>
@@ -179,7 +186,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 									</ul>
 								</div>
 
-								<!-- Contact -->
+								Contact
 								<div class="col-sm-3 col-xs-12">
 									<ul>
 										<li class="dropdown-header">Dashboard</li>
@@ -189,10 +196,10 @@ FACEBOOK: https://www.facebook.com/themefisher
 										<li><a href="address.html">Address</a></li>
 										<li><a href="profile-details.html">Profile Details</a></li>
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Utility -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<ul>
 										<li class="dropdown-header">Utility</li>
 										<li role="separator" class="divider"></li>
@@ -200,13 +207,13 @@ FACEBOOK: https://www.facebook.com/themefisher
 										<li><a href="signin.html">Signin Page</a></li>
 										<li><a href="forget-password.html">Forget Password</a></li>
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Mega Menu -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<a href="shop.html">
 										<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
-									</a>
+									</a> -->
 								</div>
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
@@ -254,7 +261,7 @@ FACEBOOK: https://www.facebook.com/themefisher
         <div class="col-lg-8 text-center">
 			<p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1" class="text-uppercase">Showcase your plants!</p>
           <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="addItems.html">Sell Your Products Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="addItems2.php">Sell Your Products Now</a>
         </div>
       </div>
     </div>
@@ -265,7 +272,7 @@ FACEBOOK: https://www.facebook.com/themefisher
         <div class="col-lg-8 text-left">
 			<p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1" class="text-uppercase">Showcase your plants!</p>
 			<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="addItems.html">Sell Your Products Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="addItems2.php">Sell Your Products Now</a>
         </div>
       </div>
     </div>
@@ -276,7 +283,7 @@ FACEBOOK: https://www.facebook.com/themefisher
         <div class="col-lg-8 text-right">
 			<p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1" class="text-uppercase">Showcase your plants!</p>
 			<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" class="text-uppercase">home is where<br>your plants are</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="addItems.html">Sell Your Products Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="addItems2.php">Sell Your Products Now</a>
         </div>
       </div>
     </div>
@@ -363,14 +370,16 @@ FACEBOOK: https://www.facebook.com/themefisher
 					</div>
 					<div class="product-content">
 						<h4><a><?php echo $row["name"] ?></a></h4>
-						<p class="price"></p>
+						<p class="price">$00.00</p>
+						<p class="qty"> <?php echo $row["quantity"] ?> In stock</p>
 					</div>
 				</div>
 			</div>
 			<?php
 				}
 			?>
-		</div>
+		</div>	
+
 		<!-- Modal -->
 		<div class="modal product-modal fade" id="product-modal">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -390,7 +399,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 			        				<h2 class="product-title">GM Pendant, Basalt Grey</h2>
 			        				<p class="product-price">$200</p>
 			        				<p class="product-short-description">
-			        					Stay Updated on the newest additions and updates about all kinds of plants!  
+			        					blabla
 			        				</p>
 			        				<a href="cart.html" class="btn btn-main">Add To Cart</a>
 			        				<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
@@ -416,7 +425,7 @@ Start Call To Action
 			<div class="col-md-12 text-center">
 				<div class="title">
 					<h2>SUBSCRIBE TO NEWSLETTER</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, <br> facilis numquam impedit ut sequi. Minus facilis vitae excepturi sit laboriosam.</p>
+					<p>Stay informed on the newest additions and updates about all kinds of plants.<br> You can unsubscribe anytime you want.</p>
 				</div>
 				<div class="col-lg-6 col-md-offset-3">
 				    <div class="input-group subscription-form">

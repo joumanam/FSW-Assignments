@@ -12,6 +12,9 @@ TWITTER: https://twitter.com/themefisher
 FACEBOOK: https://www.facebook.com/themefisher
 -->
 
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +23,7 @@ FACEBOOK: https://www.facebook.com/themefisher
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Cart | Bloom and Grow</title>
+  <title>Shop | Bloom and Grow</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -58,13 +61,13 @@ FACEBOOK: https://www.facebook.com/themefisher
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<div class="contact-number">
 					<i class="tf-ion-ios-telephone"></i>
-					<span>+961 70 301053</span>
+					<span> +961 70 301053</span>
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Site Logo -->
 				<div class="logo text-center">
-					<a href="index-customer.php">
+					<a href="index.html">
 						<!-- replace logo here -->
 						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -83,18 +86,26 @@ FACEBOOK: https://www.facebook.com/themefisher
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Cart -->
 				<ul class="top-menu text-right list-inline">
-					<li>
-						<!-- <a href="#!" ><i
-								class="tf-ion-android-cart"></i>Cart</a> -->
+					<li class="dropdown cart-nav dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+								class="tf-ion-android-cart"></i>Cart</a>
 						<div class="dropdown-menu cart-dropdown">
 							<!-- Cart Item -->
 							<div class="media">
 								<a class="pull-left" href="#!">
 									<img class="media-object" src="images/shop/cart/cart-1.jpg" alt="image" />
 								</a>
-								
+								<div class="media-body">
+									<h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
+									<div class="cart-price">
+										<span>1 x</span>
+										<span>1250.00</span>
+									</div>
+									<h5><strong>$1200</strong></h5>
+								</div>
 								<a href="#!" class="remove"><i class="tf-ion-close"></i></a>
-							</div>
+							</div><!-- / Cart Item -->
+							<!-- Cart Item -->
 							<div class="media">
 								<a class="pull-left" href="#!">
 									<img class="media-object" src="images/shop/cart/cart-2.jpg" alt="image" />
@@ -185,21 +196,21 @@ FACEBOOK: https://www.facebook.com/themefisher
 							<div class="row">
 
 								<!-- Basic -->
-								<div>
+								<div class="col-lg-6 col-md-6 mb-sm-3">
 									<ul>
 										<li class="dropdown-header">Pages</li>
 										<li role="separator" class="divider"></li>
 										<li><a href="shop.html">Shop</a></li>
 										<li><a href="checkout.html">Checkout</a></li>
-										<!-- <li><a href="cart.html">Cart</a></li>
+										<li><a href="cart.html">Cart</a></li>
 										<li><a href="pricing.html">Pricing</a></li>
-										<li><a href="confirmation.html">Confirmation</a></li> -->
+										<li><a href="confirmation.html">Confirmation</a></li>
 
 									</ul>
 								</div>
 
 								<!-- Layout -->
-								<!-- <div class="col-lg-6 col-md-6 mb-sm-3">
+								<div class="col-lg-6 col-md-6 mb-sm-3">
 									<ul>
 										<li class="dropdown-header">Layout</li>
 										<li role="separator" class="divider"></li>
@@ -207,7 +218,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
 
 									</ul>
-								</div> -->
+								</div>
 
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
@@ -216,10 +227,10 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 					<!-- Pages -->
 					<li class="dropdown full-width dropdown-slide">
-						<!-- <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Pages <span
-								class="tf-ion-ios-arrow-down"></span></a> -->
-						<div class="dropdown-menu"> -->
+								class="tf-ion-ios-arrow-down"></span></a>
+						<div class="dropdown-menu">
 							<div class="row">
 
 								<!-- Introduction -->
@@ -252,7 +263,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 									<ul>
 										<li class="dropdown-header">Utility</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="login2.html">Login Page</a></li>
+										<li><a href="login.html">Login Page</a></li>
 										<li><a href="signin.html">Signin Page</a></li>
 										<li><a href="forget-password.html">Forget Password</a></li>
 									</ul>
@@ -272,9 +283,9 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 					<!-- Blog -->
 					<li class="dropdown dropdown-slide">
-						<!-- <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Blog <span
-								class="tf-ion-ios-arrow-down"></span></a> -->
+								class="tf-ion-ios-arrow-down"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
 							<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
@@ -286,9 +297,9 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 					<!-- Shop -->
 					<li class="dropdown dropdown-slide">
-						<!-- <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Elements <span
-								class="tf-ion-ios-arrow-down"></span></a> -->
+								class="tf-ion-ios-arrow-down"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="typography.html">Typography</a></li>
 							<li><a href="buttons.html">Buttons</a></li>
@@ -308,10 +319,10 @@ FACEBOOK: https://www.facebook.com/themefisher
 		<div class="row">
 			<div class="col-md-12">
 				<div class="content">
-					<h1 class="page-name">Cart</h1>
+					<h1 class="page-name">Shop</h1>
 					<ol class="breadcrumb">
 						<li><a href="index-customer.php">Home</a></li>
-						<li class="active">cart</li>
+						<li class="active">shop</li>
 					</ol>
 				</div>
 			</div>
@@ -320,71 +331,77 @@ FACEBOOK: https://www.facebook.com/themefisher
 </section>
 
 
+<section class="products section">
+	<div class="container">
+		<div class="row">
+			
+		<?php		
+				include "connection.php";
+				$query = "SELECT * FROM `plants_for_sale`";
+				$stmt = $connection->prepare($query);
+				$stmt->execute();
+				$result = $stmt->get_result();
+				while($row = $result->fetch_assoc()) {
+			?>
+			<div class="col-md-4">
+				<div class="product-item">
+					<div class="product-thumb">
+						<img class="img-responsive" src='<?php echo $row['image'];?>' alt="plant">
+						<div class="preview-meta">
+							<ul>
+								<li>
+									<a href="cart.html"><i class="tf-ion-android-cart"></i></a>
+								</li>
+							</ul>
+                      	</div>
+					</div>
+					<div class="product-content">
+						<h4><a><?php echo $row["name"] ?></a></h4>
+						<p class="price">$00.00</p>
+					</div>
+				</div>
+			</div>
+			<?php
+				}
+			?>
+		</div>
+			
+		<!-- Modal -->
+		<div class="modal product-modal fade" id="product-modal">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<i class="tf-ion-close"></i>
+			</button>
+		  	<div class="modal-dialog " role="document">
+		    	<div class="modal-content">
+			      	<div class="modal-body">
+			        	<div class="row">
+			        		<div class="col-md-8 col-sm-6 col-xs-12">
+			        			<div class="modal-image">
+				        			<img class="img-responsive" src="images/shop/products/modal-product.jpg" alt="product-img" />
+			        			</div>
+			        		</div>
+			        		<div class="col-md-4 col-sm-6 col-xs-12">
+			        			<div class="product-short-details">
+			        				<h2 class="product-title">GM Pendant, Basalt Grey</h2>
+			        				<p class="product-price">$200</p>
+			        				<p class="product-short-description">
+			        					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil cum. Illo laborum numquam rem aut officia dicta cumque.
+			        				</p>
+			        				<a href="cart.html" class="btn btn-main">Add To Cart</a>
+			        				<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
+			        			</div>
+			        		</div>
+			        	</div>
+			        </div>
+		    	</div>
+		  	</div>
+		</div><!-- /.modal -->
 
-<div class="page-wrapper">
-  <div class="cart shopping">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="block">
-            <div class="product-list">
-              <form method="post">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th class="">Item Name</th>
-                      <th class="">Item Price</th>
-                      <th class="">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="">
-                      <td class="">
-                        <div class="product-info">
-                          <img width="80" src="images/shop/cart/cart-1.jpg" alt="" />
-                          <a href="#!">Sunglass</a>
-                        </div>
-                      </td>
-                      <td class="">$00.00</td>
-                      <td class="">
-                        <a class="product-remove" href="#!">Remove</a>
-                      </td>
-                    </tr>
-                    <tr class="">
-                      <td class="">
-                        <div class="product-info">
-                          <img width="80" src="images/shop/cart/cart-2.jpg" alt="" />
-                          <a href="#!">Airspace</a>
-                        </div>
-                      </td>
-                      <td class="">$200.00</td>
-                      <td class="">
-                        <a class="product-remove" href="#!">Remove</a>
-                      </td>
-                    </tr>
-                    <tr class="">
-                      <td class="">
-                        <div class="product-info">
-                          <img width="80" src="images/shop/cart/cart-3.jpg" alt="" />
-                          <a href="#!">Bingo</a>
-                        </div>
-                      </td>
-                      <td class="">$200.00</td>
-                      <td class="">
-                        <a class="product-remove" href="#!">Remove</a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <a href="checkout.html" class="btn btn-main pull-right">Checkout</a>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+		</div>
+	</div>
+</section>
+
+
 
 
 <footer class="footer section text-center">
