@@ -17,13 +17,14 @@ if (isset($_POST["pass"]) && $_POST["pass"] !="") {
 	$result = $stmt->get_result();
 	$row = $result->fetch_assoc();
 
-	$id = $row["id"];
+	$user_id = $row["id"];
 
 	if($row > 0) {
-		header('location: ../expenses/home.php');
-		$_SESSION["user_id"] = $id;
+		$_SESSION["user_id"] = $user_id;
+		header('location: ../expenses/home.html');
 
 	}
+
 	else{
 		$_SESSION["login-flash"] = "You have entered a wrong username/password";
 		header('location: ../expenses/login2.php');
