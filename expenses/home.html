@@ -46,6 +46,7 @@
                             <th>Expense Category</th>
                             <th>Date</th>
                             <th>Amount</th>
+                            <th>Edit/Delete</th>
                             </tr>
 
                             <!-- <tr>
@@ -175,19 +176,23 @@
         <script>
 
         $(document).ready(getExpenses);
+        $("#add_btn").click(addExpense);
+
 
         function getExpenses(){
         getExpensesAPI().then(expenses => {
-            console.log(expenses)
+            // console.log(expenses)
 			$.each(expenses, function(index, expense){
 				var $tr = $('<tr>').append(
 					$('<td>').text(expense.id),
 					$('<td>').text(expense.name),
 					$('<td>').text(expense.date),
 					$('<td>').text(expense.amount),
+                    $('<td>').append("<button type='button' class='btn btn-primary'>Edit</button>").append("   ").append("<button type='button' id='delete_" + expense.id + "' class='btn btn-danger deleteBtn'>Delete</button>")
+
 				).appendTo("#expenses_table");
 			})
-	
+            $(".deleteBtn").click(deleteExpense);
 		});
 	}
 
@@ -211,16 +216,27 @@
 					$('<td>').text(expense.date),
 					$('<td>').text(expense.amount),
 				).appendTo("#expenses_table");
-			// $(".deleteBtn").click(deleteArticle);
+			$(".deleteBtn").click(deleteExpense);
 		});
 	}
+
+    function deleteExpense(){
+		deleteExpenseAPI().then(response => {
+            var $tr = $('<tr>').append(
+					$('<td>').text(expense.id),
+					$('<td>').text(expense.name),
+					$('<td>').text(expense.date),
+					$('<td>').text(expense.amount),
+				).hide("#expenses_table");
+		});
+    }
 
     async function addExpenseAPI(){
 		const response = await fetch("http://localhost/expenses/add_expenses.php?", {
 			method: 'POST',
 			body: new URLSearchParams({
-				"date": "Article from JS API",
-				"amount": "JS API"
+				"date": "0000-00-00",
+				"amount": "1000"
 			})
 		});
 
@@ -233,7 +249,18 @@
 		return expense;
     }
 
-    // $("#add_btn").click(addExpense);
+    async function deleteExpenseAPI(){
+		const response = await fetch("http://localhost/expenses/delete_expense.php?id=");
+		
+		if(!response.ok){
+			const message = "ERROR OCCURED";
+			throw new Error(message);
+		}
+		
+		const expense = await response.json();
+		return expense;
+	}
+
 
 
 

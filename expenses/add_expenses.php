@@ -20,8 +20,7 @@ $expense_obj["amount"] = $amount;
 
 
 
-
-$article_json = json_encode($article_obj);
-echo $article_json;
+$expense_json = json_encode($expense_obj);
+echo $expense_json;
 
 ?>
