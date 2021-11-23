@@ -1,4 +1,4 @@
-Hello Elias, I'd appreciate you take into consideration the below regarding the implemented features:
+Hello reader, I'd appreciate you take into consideration the below regarding the implemented features:
 
 - The login / SignUp (front-end / back-end).
 - The search (front-end / back-end).
@@ -7,9 +7,6 @@ Hello Elias, I'd appreciate you take into consideration the below regarding the 
 - The add friends (API only, no front-end).
 - The edit profile page (front-end only).
 
-- Pending requests (Not implemented).
-- Block users (Not implemented).
-- Notifications (Not implemented).
 
 N.B:The home page is actually the "Find Friends" page (or the search page).
 
