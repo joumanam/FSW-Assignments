@@ -1,0 +1,1 @@
+Database and SQL queries assignment
